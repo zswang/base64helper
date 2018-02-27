@@ -4,19 +4,17 @@
     var exists
     try {
       result = str.replace(/[a-z0-9+\/]+=*/ig, function (all) {
-        exists = true
-        return decodeURIComponent(escape(atob(all)))
+        var c = decodeURIComponent(escape(atob(all)))
+        if (/[a-z]{3}/.test(c) || /[\u4e00-\u9fa5]{2}/.test(c)) { // 三个有效文字
+          exists = true
+          return c
+        }
+        return all
       })
     } catch (ex) {
       return false
     }
     if (!exists) {
-      return false
-    }
-    if (/^[a-zA-Z0-9]{1,3}$/.test(result)) {
-      return false
-    }
-    if (/[0x00-0x07]/.test(result)) {
       return false
     }
     return result
