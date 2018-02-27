@@ -1,0 +1,32 @@
+{
+  "name": "base64helper",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A base64 codec tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "gulp base64 && gulp readme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zswang/base64helper.git"
+  },
+  "keywords": [
+    "base64",
+    "helper"
+  ],
+  "author": "zswang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zswang/base64helper/issues"
+  },
+  "homepage": "https://github.com/zswang/base64helper#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jdists": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-uglify": "^2.1.0"
+  }
+}
